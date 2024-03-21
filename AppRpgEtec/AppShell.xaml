@@ -4,7 +4,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AppRpgEtec"
-    Shell.FlyoutBehavior="Disabled"
+    xmlns:viewsUsuarios ="clr-namespace:AppRpgEtec.Views.Usuarios"
+    xmlns:viewsPersonagens ="clr-namespace:AppRpgEtec.Views.Personagens"
+    xmlns:viewsDisputas ="clr-namespace:AppRpgEtec.Views.Disputas"
     Title="AppRpgEtec">
 
     <Shell.FlyoutHeaderTemplate>
@@ -30,9 +32,22 @@
     </Shell.FlyoutHeaderTemplate>
 
     
+    
+    
     <ShellContent
-        Title="Home"
+        Title="Home" Icon="home.svg"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <ShellContent Title="Usuários" Icon="home.svg"
+                  ContentTemplate="{DataTemplate viewsUsuarios:ListagemView}" />
+
+    <ShellContent Title='Personagens' Icon="menupersonagens.svg"
+                  ContentTemplate="{DataTemplate viewsPersonagens:ListagemView}" />
+
+    <ShellContent Title="Disputas" Icon="menudisputas.svg"
+                  ContentTemplate="{DataTemplate viewsDisputas:ListagemView}" />
+    
+
 
 </Shell>
